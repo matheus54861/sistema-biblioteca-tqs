@@ -1,0 +1,92 @@
+{
+  "info": {
+    "name": "Sistema de Biblioteca - TQS API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Home Status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:5000/",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "5000",
+          "path": [""]
+        }
+      }
+    },
+    {
+      "name": "2. Cadastrar Livro",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            { "key": "titulo", "value": "Clean Code", "type": "text" },
+            { "key": "autor", "value": "Robert Martin", "type": "text" },
+            { "key": "preco", "value": "99.90", "type": "text" }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:5000/cadastrar",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "5000",
+          "path": ["cadastrar"]
+        }
+      }
+    },
+    {
+      "name": "3. Pesquisar Livro",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:5000/pesquisar?termo=Clean",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "5000",
+          "path": ["pesquisar"],
+          "query": [{ "key": "termo", "value": "Clean" }]
+        }
+      }
+    },
+    {
+      "name": "4. Alugar Livro (ID 1)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:5000/alugar/1",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "5000",
+          "path": ["alugar", "1"]
+        }
+      }
+    },
+    {
+      "name": "5. Comprar Livro (ID 2)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:5000/comprar/2",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "5000",
+          "path": ["comprar", "2"]
+        }
+      }
+    }
+  ]
+}

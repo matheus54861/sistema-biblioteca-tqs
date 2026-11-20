@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Livros</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>📚 Catálogo de Livros</h2>
+            <a href="/" class="btn btn-outline-primary">Menu Principal</a>
+        </div>
+
+        <div class="card shadow p-3 mb-4">
+            <form action="/pesquisar" method="GET" class="row g-3">
+                <div class="col-md-10">
+                    <input type="text" class="form-control" id="termo" name="termo" value="{{ termo }}" placeholder="Pesquisar por título...">
+                </div>
+                <div class="col-md-2 d-grid">
+                    <button type="submit" id="btn-buscar" class="btn btn-primary">Buscar</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="card shadow">
+            <div class="card-body">
+                <table class="table table-striped table-hover align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Título</th>
+                            <th>Autor</th>
+                            <th>Preço</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for livro in livros %}
+                        <tr>
+                            <td>{{ livro[0] }}</td>
+                            <td class="fw-bold">{{ livro[1] }}</td>
+                            <td>{{ livro[2] }}</td>
+                            <td>R$ {{ "%.2f"|format(livro[3]) }}</td>
+                            <td>
+                                {% if livro[4] == 'Disponível' %}
+                                    <span class="badge bg-success">Disponível</span>
+                                {% elif livro[4] == 'Alugado' %}
+                                    <span class="badge bg-warning text-dark">Alugado</span>
+                                {% else %}
+                                    <span class="badge bg-danger">Vendido</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if livro[4] == 'Disponível' %}
+                                    <form action="/alugar/{{ livro[0] }}" method="POST" style="display:inline;">
+                                        <button type="submit" class="btn btn-sm btn-warning">Alugar</button>
+                                    </form>
+                                    <form action="/comprar/{{ livro[0] }}" method="POST" style="display:inline;">
+                                        <button type="submit" class="btn btn-sm btn-secondary">Comprar</button>
+                                    </form>
+                                {% endif %}
+                                
+                                <!-- Botão de remover disponível para qualquer livro, independente do status -->
+                                <form action="/remover/{{ livro[0] }}" method="POST" style="display:inline;" onsubmit="return confirm('Deseja realmente remover este livro?');">
+                                    <button type="submit" class="btn btn-sm btn-danger">Remover</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="6" class="text-center text-muted">Nenhum livro encontrado.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
