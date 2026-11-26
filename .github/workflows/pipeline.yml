@@ -24,6 +24,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Executar Testes Unitários e de API com Pytest
+      - name: Iniciar Flask e Executar Testes com Pytest
         run: |
+          python app.py &
+          sleep 3
           pytest -v -o pythonpath=. tests/test_unit.py tests/test_api.py
