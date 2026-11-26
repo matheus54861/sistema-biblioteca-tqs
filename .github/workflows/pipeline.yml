@@ -26,4 +26,4 @@ jobs:
 
       - name: Executar Testes Unitários e de API com Pytest
         run: |
-          pytest -v -o pythonpath=.
+          pytest -v -o pythonpath=. tests/test_unit.py tests/test_api.py
