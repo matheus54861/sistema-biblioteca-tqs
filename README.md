@@ -18,8 +18,7 @@ O objetivo deste projeto é demonstrar a aplicação prática de um processo com
 ## 📌 Nome e Versão do Sistema
 * **Nome do Sistema:** Sistema de Biblioteca Virtual (`sistema-biblioteca-tqs`)
 * **Versão Testada:** `v1.0.0`
-* **Link do Repositório GitHub:** [Inserir URL do seu repositório no GitHub]
-
+* **Link do Repositório GitHub:** https://github.com/matheus54861/sistema-biblioteca-tqs.git
 ---
 
 ## 🛠️ Tecnologias Utilizadas
@@ -47,7 +46,7 @@ Antes de iniciar, certifique-se de ter instalado em sua máquina:
 
 1. **Clone o repositório:**
    ```bash
-   git clone [INSIRA_A_URL_DO_SEU_REPOSITORIO_AQUI]
+   git clone https://github.com/matheus54861/sistema-biblioteca-tqs.git
    cd sistema-biblioteca-tqs
    ```
 
