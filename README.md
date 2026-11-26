@@ -7,10 +7,11 @@ O objetivo deste projeto é demonstrar a aplicação prática de um processo com
 ---
 
 ## 👥 Identificação dos Integrantes
-* **Integrante 1:** [Inserir Nome Completo - RA]
-* **Integrante 2:** [Inserir Nome Completo - RA]
-* **Integrante 3:** [Inserir Nome Completo - RA] *(remover se for dupla)*
-* **Contato do Grupo:** [Inserir e-mail institucional ou pessoal do responsável]
+* **Integrante 1:** Matheus Pereira Marques - 23110098
+* **Integrante 2:** Thiago dos Santos Castro - 23110147
+* **Integrante 3:** Lucas de Oliveira Nascimento - 23110325
+* **Integrante 4:** Henrique Ribeiro Bonafim - 23110141
+* **Contato do Grupo:** matheuspmarques38@outlook.com
 
 ---
 
